@@ -1,0 +1,10 @@
+import mysql.connector as a
+con=a.connect(host="localhost",user="root",passwd="911931",database="shrawan")
+cur = con.cursor()
+Reg_No = int(input("Enter your id : "))
+name = input("Enter Name Of Student : ")
+gender = input("Enter Gender (M/F) : ")
+query = "Insert into std values({},'{}','{}')".format(Reg_No,name,gender)
+cur.execute(query)
+con.commit()
+print("Data Added Successfully")
